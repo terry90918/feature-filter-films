@@ -27,7 +27,8 @@ html,
 body {
   margin: 0;
 }
-.green, .red {
+.green,
+.red {
   border-radius: 2px;
   color: #fff;
   display: inline-block;
