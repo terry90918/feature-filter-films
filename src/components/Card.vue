@@ -13,8 +13,9 @@
           <span class="views-text">{{ item.views || "- -" }}</span>
         </div>
         <div class="types">
-          <!-- <button class="btn" :class="'btn-captions-' + captions" v-for="captions in item.captions" :key="captions">{{ captions }}</button> -->
-          <button class="btn" :class="'btn-captions'">中文</button>
+          <template v-if="item.captions.length > 0">
+            <button class="btn btn-captions" :class="item.captions[0]">{{ item.captions[0] | captionsText }}</button>
+          </template>
           <button
             class="btn"
             :class="'btn-level-' + item.level"
@@ -51,7 +52,26 @@ export default {
   },
   filters: {
     captionsText(val) {
-      return val;
+      if (!val) return "";
+      let text = "";
+      switch (val) {
+        case "cht":
+          text = "中文";
+          break;
+        case "ja":
+          text = "日文";
+          break;
+        case "vi":
+          text = "越南文";
+          break;
+        case "en":
+          text = "英文";
+          break;
+        default:
+          text = "中文";
+          break;
+      }
+      return text;
     },
     levelText(val) {
       if (!val) return "";
@@ -64,6 +84,9 @@ export default {
           text = "中級";
           break;
         case 3:
+          text = "中高級";
+          break;
+        case 4:
           text = "高級";
           break;
         default:
