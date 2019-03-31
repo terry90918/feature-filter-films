@@ -1,7 +1,10 @@
 <template>
   <div class="card">
     <div class="card-img-top" :data-duration="item.duration | moment">
-      <div class="img" :style="{ backgroundImage: 'url(' + item.thumbnail + ')' }"></div>
+      <div
+        class="img"
+        :style="{ backgroundImage: 'url(' + item.thumbnail + ')' }"
+      ></div>
     </div>
     <div class="card-body">
       <div class="card-title">{{ item.title || "- -" }}</div>
@@ -14,13 +17,17 @@
         </div>
         <div class="types">
           <template v-if="item.captions.length > 0">
-            <button class="btn btn-captions" :class="item.captions[0]">{{ item.captions[0] | captionsText }}</button>
+            <button class="btn btn-captions" :class="item.captions[0]">
+              {{ item.captions[0] | captionsText }}
+            </button>
           </template>
           <button
             class="btn"
             :class="'btn-level-' + item.level"
             v-if="item.level"
-          >{{ item.level | levelText }}</button>
+          >
+            {{ item.level | levelText }}
+          </button>
         </div>
       </div>
     </div>

@@ -6,24 +6,54 @@
         class="btn"
         :class="{ active: 'publish' === sort.type }"
         @click="sort.type = 'publish'"
-      >發佈時間</button>
+      >
+        發佈時間
+      </button>
       <button
         class="btn"
         :class="{ active: 'views' === sort.type }"
         @click="sort.type = 'views'"
-      >觀看次數</button>
+      >
+        觀看次數
+      </button>
       <button
         class="btn"
         :class="{ active: 'collectCount' === sort.type }"
         @click="sort.type = 'collectCount'"
-      >收藏次數</button>
+      >
+        收藏次數
+      </button>
     </div>
     <div class="col-sm-12">
       <div class="title">長度</div>
-      <button class="btn" :class="{ active: '0' === sort.time }" @click="sort.time = '0'">不限</button>
-      <button class="btn" :class="{ active: '1' === sort.time }" @click="sort.time = '1'">4 分鐘以下</button>
-      <button class="btn" :class="{ active: '2' === sort.time }" @click="sort.time = '2'">5 - 10 分鐘</button>
-      <button class="btn" :class="{ active: '3' === sort.time }" @click="sort.time = '3'">超過 10 分鐘</button>
+      <button
+        class="btn"
+        :class="{ active: '0' === sort.time }"
+        @click="sort.time = '0'"
+      >
+        不限
+      </button>
+      <button
+        class="btn"
+        :class="{ active: '1' === sort.time }"
+        @click="sort.time = '1'"
+      >
+        4 分鐘以下
+      </button>
+      <button
+        class="btn"
+        :class="{ active: '2' === sort.time }"
+        @click="sort.time = '2'"
+      >
+        5 - 10 分鐘
+      </button>
+      <button
+        class="btn"
+        :class="{ active: '3' === sort.time }"
+        @click="sort.time = '3'"
+      >
+        超過 10 分鐘
+      </button>
     </div>
   </nav>
 </template>

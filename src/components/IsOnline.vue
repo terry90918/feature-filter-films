@@ -36,5 +36,3 @@ export default {
   background-color: tomato;
 }
 </style>
-
-
